@@ -1,0 +1,70 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      owner: {
+        name: 'Tony Aditama',
+        email: 'tonyaditama@gmail.com',
+        phone: '+6281234567890',
+        instagram: 'https://instagram.com/tonyaditama',
+      }
+    }
+  },
+
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    '@nuxtjs/seo',
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+  ],
+
+  css: ['~/assets/css/main.css'],
+
+  compatibilityDate: '2025-07-16',
+
+  app: {
+    layoutTransition: { name: 'fade', mode: 'out-in' },
+    pageTransition: { name: 'fade', mode: 'out-in' },
+  },
+
+  i18n: {
+    locales: [
+      { code: 'id', name: 'Indonesia', language: 'id-ID', file: 'id.json' },
+      { code: 'en', name: 'English', language: 'en-US', file: 'en.json' },
+    ],
+    skipSettingLocaleOnNavigate: true,
+    defaultLocale: 'id',
+  },
+
+  icon: {
+    customCollections: [{
+      prefix: 'custom',
+      dir: './app/assets/icons'
+    }]
+  },
+
+  seo: {
+    meta: {
+      description: 'Uncover the heart of Indonesia with tailored tours, local insights, and unforgettable experiences',
+      themeColor: [
+        { content: '#ff2056', media: '(prefers-color-scheme: dark)' },
+        { content: 'white', media: '(prefers-color-scheme: light)' },
+      ],
+      author: 'Rasyidly',
+      colorScheme: 'dark light',
+      applicationName: 'Trip Java Bali',
+      ogSiteName: 'Explore Java & Bali | Your Personal Guide',
+      ogLocale: 'en_US',
+      ogType: 'website',
+      ogUrl: 'https://tripjavabali.com',
+      ogTitle: 'Explore Java & Bali | Your Personal Guide',
+      ogImage: '/image.png',
+      robots: 'index, follow',
+    }
+  },
+})
