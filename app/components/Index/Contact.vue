@@ -63,7 +63,10 @@ const actions = [
 
             <div class="divide-y divide-gray-200 dark:divide-neutral-800">
                 <div v-for="(action, index) in actions" :key="index" class="flex gap-x-7 py-6">
-                    <UIcon :name="action.icon" class="size-6" />
+                    <!-- <UIcon :name="action.icon" class="size-6" /> -->
+                    <div class="flex items-center justify-center w-10 h-10">
+                        <UIcon :name="action.icon" class="w-6 h-6" />
+                    </div>
                     <div class="grow space-y-3">
                         <div>
                             <h3 class="font-semibold">{{ action.label }}</h3>

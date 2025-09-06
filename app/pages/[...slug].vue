@@ -7,20 +7,16 @@ const { locale } = useI18n()
 const slug = computed(() => withLeadingSlash(String(`${route.params.slug?.[1]}`)))
 
 const { data: post } = await useAsyncData('page-' + slug.value, async () => {
-    // Build collection name based on current locale
     const collection = ('posts_' + locale.value) as keyof Collections
     const content = await queryCollection(collection).path(slug.value).first()
-
     console.log(slug.value)
-
-    // Optional: fallback to default locale if content is missing
     if (!content && locale.value !== 'id') {
         return await queryCollection('posts_id').path(slug.value).first()
     }
 
     return content
 }, {
-    watch: [locale], // Refetch when locale changes
+    watch: [locale], 
 })
 
 useSeoMeta({
@@ -32,7 +28,6 @@ useSeoMeta({
 <template>
     <UContainer class="mx-auto py-10 lg:py-14 space-y-8 max-w-3xl">
         <div>
-            <!-- Avatar Media -->
             <div class="flex justify-between items-center mb-6">
                 <div class="flex w-full sm:items-center gap-5 sm:gap-3">
                     <div class="shrink-0">
@@ -58,15 +53,14 @@ useSeoMeta({
                     </div>
                 </div>
             </div>
-            <!-- End Avatar Media -->
-
-            <!-- Content -->
             <div class="space-y-5 md:space-y-8">
                 <Heading :title="post.title" :description="post.description" />
                 <NuxtImg v-if="post.image" :src="post.image" alt="Post Image" class="rounded-lg w-full" />
                 <ContentRenderer class="prose dark:prose-invert" :value="post.body" />
             </div>
-            <!-- End Content -->
+        </div>
+        <div class="flex justify-center">
+            <UButton variant="soft" color="neutral" to="/" label="Kembali ke beranda" icon="i-lucide-arrow-left" class="mx-auto" />
         </div>
     </UContainer>
 </template>

@@ -9,6 +9,10 @@ export default defineNuxtConfig({
         email: 'tonyaditama@gmail.com',
         phone: '+6281234567890',
         instagram: 'https://instagram.com/tonyaditama',
+        whatsapp: 'https://wa.me/6281234567890',
+        twitter: 'https://twitter.com/tonyaditama',
+        linkedin: 'https://linkedin.com/in/tonyaditama',
+        company: 'Company',
       }
     }
   },
