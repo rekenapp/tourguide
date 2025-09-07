@@ -1,23 +1,28 @@
 <script lang="ts" setup>
 import type { NavigationMenuItem } from '@nuxt/ui';
 const config = useRuntimeConfig()
+const isMenuOpen = ref(false)
 
 const navigations: NavigationMenuItem[] = [
     { label: 'Home', to: '/' },
     { label: 'About', to: '/about' },
     { label: 'Posts', to: '/posts' }
 ]
-const footerNavigations: NavigationMenuItem[] = [
-    { label: 'Home', to: '/' },
-    { label: 'About', to: '/about' },
-    { label: 'Posts', to: '/posts' }
-]
+
 const socialMediaNavigations: NavigationMenuItem[] = [
     { href: `${config.public.owner.email}`, icon: 'i-lucide-mail' },
     { href: `${config.public.owner.instagram}`, icon: 'i-lucide-instagram' },
     { href: `${config.public.owner.linkedin}`, icon: 'i-lucide-linkedin' },
     { href: `${config.public.owner.whatsapp}`, icon: 'i-lucide-message-circle' }
 ]
+
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value
+}
+
+const closeMenu = () => {
+    isMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -35,26 +40,40 @@ const socialMediaNavigations: NavigationMenuItem[] = [
                     <SwitchLocalePathLink locale="en">EN</SwitchLocalePathLink>
                 </div>
                 <ColorModeButton />
-                <div />
-                <UButton label="Book a call" color="neutral" size="lg" class="rounded-full" icon="i-lucide-phone" />
+                <UButton :icon="isMenuOpen ? 'i-lucide-x' : 'i-lucide-menu'" variant="ghost" class="cursor-pointer lg:hidden rounded-full" @click="toggleMenu" />
+                <UButton label="Book a call" color="neutral" size="lg" class="rounded-full hidden lg:flex" icon="i-lucide-phone" />
             </UCard>
+            <Transition name="fade">
+                <UCard 
+                    v-if="isMenuOpen" 
+                    class="mt-2 rounded-2xl bg-default/95 backdrop-blur-lg lg:hidden"
+                    :ui="{ body: 'p-4' }"
+                >
+                    <div class="flex flex-col gap-3">
+                        <UButton v-for="nav in navigations" :key="nav.label" :to="nav.to" variant="ghost" class="cursor-pointer justify-start text-left" @click="closeMenu">
+                            {{ nav.label }}
+                        </UButton>
+                        <UButton label="Book a call" color="neutral" size="lg" class="rounded-full w-full" icon="i-lucide-phone" @click="closeMenu" />
+                    </div>
+                </UCard>
+            </Transition>
         </UContainer>
+        
         <main class="grow">
             <slot />
         </main>
-        <footer class="mt-auto w-full py-10 px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex-1 flex gap-2 items-center justify-center">
-                    <UButton icon="i-custom-brand" variant="soft" class="rounded-full" to="/" />
-                    <p class="font-semibold text-lg">{{ config.public.owner.company }}</p>
-                </div>
-                <div class="flex-1 flex justify-center">
-                    <UNavigationMenu :items="footerNavigations" variant="link" class="hidden lg:flex" />
-                </div>
-                <div class="flex-1 flex gap-2 justify-center">
-                    <UNavigationMenu :items="socialMediaNavigations" variant="link" class="hidden lg:flex" />
-                </div>
+        
+        <UContainer class="mt-auto w-full flex flex-col md:flex-row items-center justify-between gap-3 py-6">
+            <div class="flex-1 flex items-center justify-center gap-2">
+                <UButton icon="i-custom-brand" variant="soft" class="rounded-full" to="/" />
+                <p class="font-semibold text-lg">{{ config.public.owner.company }}</p>
             </div>
-        </footer>
+            <div class="flex-1 flex justify-center">
+                <UNavigationMenu :items="navigations" variant="link" class="hidden md:flex" />
+            </div>
+            <div class="flex-1 flex justify-center">
+                <UNavigationMenu :items="socialMediaNavigations" variant="link" class="flex gap-2" />
+            </div>
+        </UContainer>
     </div>
 </template>

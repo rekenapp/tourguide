@@ -28,7 +28,7 @@ async function submit(event: FormSubmitEvent<typeof state>) {
 
 const actions = [
     { icon: 'i-lucide-info', label: $t('Tentang Kita'), to: '/about', description: $t('Pelajari lebih lanjut tentang perusahaan kita dan layanan yang kita tawarkan.'), cta: $t('Baca Lebih Lanjut') },
-    { icon: 'i-lucide-help-circle', label: $t('FAQ Kita'), to: '/faqs', description: $t('Cari jawaban di FAQ kita untuk apa saja yang mungkin kamu ingin tanyakan.'), cta: $t('Jelajahi FAQ') },
+    { icon: 'i-lucide-help-circle', label: $t('FAQ Kita'), to: '/about#faq', description: $t('Cari jawaban di FAQ kita untuk apa saja yang mungkin kamu ingin tanyakan.'), cta: $t('Jelajahi FAQ') },
     { icon: 'i-lucide-mail', label: $t('Email Kita'), href: `mailto:${config.public.owner.email}`, external: true, description: $t('Jika kamu ingin mengirim email, gunakan alamat email ini.'), cta: config.public.owner.email },
 ]
 </script>
