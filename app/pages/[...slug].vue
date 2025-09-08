@@ -16,7 +16,7 @@ const { data: post } = await useAsyncData('page-' + slug.value, async () => {
 
     return content
 }, {
-    watch: [locale], 
+    watch: [locale],
 })
 
 useSeoMeta({
@@ -55,7 +55,7 @@ useSeoMeta({
             </div>
             <div class="space-y-5 md:space-y-8">
                 <Heading :title="post.title" :description="post.description" />
-                <NuxtImg v-if="post.image" :src="post.image" alt="Post Image" class="rounded-lg w-full" />
+                <img v-if="post.image" :src="post.image" alt="Post Image" class="rounded-lg w-full" />
                 <ContentRenderer class="prose dark:prose-invert" :value="post.body" />
             </div>
         </div>

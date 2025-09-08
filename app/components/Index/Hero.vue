@@ -21,7 +21,7 @@ const config = useRuntimeConfig()
                 <p class="text-lg text-gray-600 dark:text-neutral-400">{{ $t('TripJavaBali menghadirkan tur pribadi yang aman dan penuh kenangan indah di Jawa dan Bali — disesuaikan sepenuhnya dengan apa yang ingin kamu lihat, rasakan, dan alami bersama.') }}</p>
             </div>
 
-            <div class="mt-8 gap-3 flex justify-center">
+            <div class="mt-8 gap-3 flex flex-wrap justify-center">
                 <UButton :label="$t('Pesan Tur Sekarang')" size="xl" class="rounded-full" icon="i-lucide-phone" :href="`https://wa.me/${config.public.owner.phone}`" />
                 <UButton :label="$t('Kenalan Dulu Yuk')" color="neutral" size="xl" class="rounded-full" variant="ghost" trailing-icon="i-lucide-arrow-right" @click="$router.push('/about')" />
             </div>

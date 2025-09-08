@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  ssr: false,
+
   runtimeConfig: {
     public: {
       owner: {
@@ -72,8 +74,4 @@ export default defineNuxtConfig({
       robots: 'index, follow',
     }
   },
-
-  image: {
-    provider: 'ipxStatic'
-  }
 })
