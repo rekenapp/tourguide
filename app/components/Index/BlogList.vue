@@ -2,7 +2,7 @@
 const { locale } = useI18n()
 
 const { data: posts } = await useAsyncData('posts', () =>
-    queryCollection(`posts_${locale.value}`).all(), {
+    queryCollection(`posts_${locale.value}`).limit(3).all(), {
     watch: [locale]
 }
 )

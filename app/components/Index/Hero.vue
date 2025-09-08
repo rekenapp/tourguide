@@ -19,7 +19,7 @@
 
             <div class="mt-8 gap-3 flex justify-center">
                 <UButton :label="$t('Pesan Tur Sekarang')" size="xl" class="rounded-full" icon="i-lucide-phone" />
-                <UButton :label="$t('Kenalan Dulu Yuk')" color="neutral" size="xl" class="rounded-full" variant="ghost" trailing-icon="i-lucide-arrow-right" />
+                <UButton :label="$t('Kenalan Dulu Yuk')" color="neutral" size="xl" class="rounded-full" variant="ghost" trailing-icon="i-lucide-arrow-right" @click="$router.push('/about')" />
             </div>
         </UContainer>
     </div>

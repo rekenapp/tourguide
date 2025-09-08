@@ -28,7 +28,7 @@ async function submit(event: FormSubmitEvent<typeof state>) {
 
 const actions = [
     { icon: 'i-lucide-info', label: $t('Tentang Kita'), to: '/about', description: $t('Pelajari lebih lanjut tentang perusahaan kita dan layanan yang kita tawarkan.'), cta: $t('Baca Lebih Lanjut') },
-    { icon: 'i-lucide-help-circle', label: $t('FAQ Kita'), to: '/faqs', description: $t('Cari jawaban di FAQ kita untuk apa saja yang mungkin kamu ingin tanyakan.'), cta: $t('Jelajahi FAQ') },
+    { icon: 'i-lucide-help-circle', label: $t('FAQ Kita'), to: '/about#faq', description: $t('Cari jawaban di FAQ kita untuk apa saja yang mungkin kamu ingin tanyakan.'), cta: $t('Jelajahi FAQ') },
     { icon: 'i-lucide-mail', label: $t('Email Kita'), href: `mailto:${config.public.owner.email}`, external: true, description: $t('Jika kamu ingin mengirim email, gunakan alamat email ini.'), cta: config.public.owner.email },
 ]
 </script>
@@ -63,7 +63,10 @@ const actions = [
 
             <div class="divide-y divide-gray-200 dark:divide-neutral-800">
                 <div v-for="(action, index) in actions" :key="index" class="flex gap-x-7 py-6">
-                    <UIcon :name="action.icon" class="size-6" />
+                    <!-- <UIcon :name="action.icon" class="size-6" /> -->
+                    <div class="flex items-center justify-center w-10 h-10">
+                        <UIcon :name="action.icon" class="w-6 h-6" />
+                    </div>
                     <div class="grow space-y-3">
                         <div>
                             <h3 class="font-semibold">{{ action.label }}</h3>
