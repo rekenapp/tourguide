@@ -3,7 +3,7 @@ title: "10 Tips for Traveling in Yogyakarta from a Local Tour Guide"
 description: "Practical and authentic tips for enjoying tourism in Yogyakarta and Java from an experienced tour guide"
 date: "2025-09-06"
 author: "Tony Aditama"
-image: "https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+image: "/posts/jogja.jpg"
 ---
 
 After years of taking tourists around Yogyakarta and Java, I've compiled practical tips to make your trip more enjoyable and authentic:

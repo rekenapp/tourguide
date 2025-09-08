@@ -3,7 +3,7 @@ title: "10 Tips Wisata di Yogyakarta dari Tour Guide Lokal"
 description: "Tips praktis dan autentik untuk menikmati wisata Yogyakarta dan Jawa dari tour guide berpengalaman"
 date: "2025-09-06"
 author: "Tony Aditama"
-image: "https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+image: "/posts/jogja.jpg"
 ---
 
 Setelah bertahun-tahun membawa wisatawan keliling Yogyakarta dan Jawa, saya kumpulkan tips praktis untuk membuat perjalanan Anda lebih menyenangkan dan autentik:

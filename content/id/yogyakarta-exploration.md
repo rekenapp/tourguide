@@ -3,7 +3,7 @@ title: "Menjelajahi Keindahan Yogyakarta: Panduan Tour Guide"
 description: "Panduan lengkap destinasi wisata unggulan di Yogyakarta sebagai tour guide lokal"
 date: "2025-09-06"
 author: "Tony Aditama"
-image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+image: "/posts/tugu.jpg"
 ---
 
 Yogyakarta, atau yang akrab disebut Jogja, adalah kota budaya yang kaya akan sejarah dan keindahan alam. Sebagai tour guide lokal, saya sering membawa wisatawan ke destinasi unggulan seperti:

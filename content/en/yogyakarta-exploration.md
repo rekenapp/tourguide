@@ -3,7 +3,7 @@ title: "Exploring the Beauty of Yogyakarta: Tour Guide Handbook"
 description: "Complete guide to top tourist destinations in Yogyakarta as a local tour guide"
 date: "2025-09-06"
 author: "Tony Aditama"
-image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+image: "/posts/tugu.jpg"
 ---
 
 Yogyakarta, or affectionately called Jogja, is a cultural city rich in history and natural beauty. As a local tour guide, I often take tourists to top destinations such as:

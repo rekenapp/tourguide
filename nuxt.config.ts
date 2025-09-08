@@ -72,4 +72,8 @@ export default defineNuxtConfig({
       robots: 'index, follow',
     }
   },
+
+  image: {
+    provider: 'ipxStatic'
+  }
 })
