@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     meta: {
       description: 'Uncover the heart of Indonesia with tailored tours, local insights, and unforgettable experiences',
       themeColor: [
-        { content: '#ff2056', media: '(prefers-color-scheme: dark)' },
+        { content: '#FEB233', media: '(prefers-color-scheme: dark)' },
         { content: 'white', media: '(prefers-color-scheme: light)' },
       ],
       author: 'Rasyidly',
