@@ -72,7 +72,7 @@ const actions = [
                             <h3 class="font-semibold">{{ action.label }}</h3>
                             <p class="mt-1 text-sm text-muted">{{ action.description }}</p>
                         </div>
-                        <UButton variant="link" class="p-0" :label="action.cta" :trailing-icon="!action.external ? 'i-lucide-arrow-right' : undefined" :to="action.to" :href="action.href" external />
+                        <UButton variant="link" class="p-0" :label="action.cta" :trailing-icon="!action.external ? 'i-lucide-arrow-right' : undefined" :to="action.to" :href="action.href" />
                     </div>
                 </div>
             </div>

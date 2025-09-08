@@ -1,23 +1,20 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
-const { t } = useI18n()
 
 const contacts = [
-    { icon: 'i-lucide-mail', href: `${config.public.owner.email}` },
-    { icon: 'i-lucide-instagram', href: `${config.public.owner.instagram}` },
-    { icon: 'i-lucide-twitter', href: `${config.public.owner.twitter}` },
-    { icon: 'i-lucide-message-circle', href: `${config.public.owner.whatsapp}` }
+    { icon: 'i-lucide-mail', href: `mailto:${config.public.owner.email}` },
+    ...config.public.owner.socials,
 ]
 useSeoMeta({
-    title: t('Tentang Kami - Trip Java Bali'),
-    description: t('Pelajari lebih lanjut tentang tim berpengalaman Trip Java Bali kami, yang berdedikasi memberikan pengalaman perjalanan yang berkesan dan tur yang dipersonalisasi di Jawa dan Bali.')
+    title: $t('Tentang Kami - Trip Java Bali'),
+    description: $t('Pelajari lebih lanjut tentang tim berpengalaman Trip Java Bali kami, yang berdedikasi memberikan pengalaman perjalanan yang berkesan dan tur yang dipersonalisasi di Jawa dan Bali.')
 })
 </script>
 <template>
     <div class="relative flex flex-col items-center justify-start min-h-screen py-10 lg:py-14 px-4">
         <div class="max-w-2xl w-full space-y-6">
             <div class="flex flex-col items-center justify-center gap-3">
-                <UAvatar src="https://images.unsplash.com/photo-1510706019500-d23a509eecd4?q=80&w=2667&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" rounded class="w-32 h-32" />
+                <img src="/images/profile.png" alt="Avatar" class="w-32 h-32 rounded-full" />
                 <Heading as="h2" :title="config.public.owner.name" class="text-center [&>p]text-base" :description="$t('Tim Profesional Trip Java Bali')" />
             </div>
             <div class="space-y-4 text-muted">

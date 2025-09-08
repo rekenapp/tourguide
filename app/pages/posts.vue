@@ -1,15 +1,8 @@
 <script setup lang="ts">
-import PostAll from '~/components/Post/All.vue'
-
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-
 useSeoMeta({
-    title: t('Semua Posts - Trip Java Bali'),
-    description: t('Semua artikel dan tips wisata dari tim profesional Trip Java Bali di Yogyakarta dan Jawa')
+    title: $t('Semua Posts - Trip Java Bali'),
+    description: $t('Semua artikel dan tips wisata dari tim profesional Trip Java Bali di Yogyakarta dan Jawa')
 })
-
 </script>
 
 <template>

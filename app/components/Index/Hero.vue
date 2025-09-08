@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const config = useRuntimeConfig()
+</script>
+
 <template>
     <div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2">
         <UContainer class="pt-24 pb-16">
@@ -18,7 +22,7 @@
             </div>
 
             <div class="mt-8 gap-3 flex justify-center">
-                <UButton :label="$t('Pesan Tur Sekarang')" size="xl" class="rounded-full" icon="i-lucide-phone" />
+                <UButton :label="$t('Pesan Tur Sekarang')" size="xl" class="rounded-full" icon="i-lucide-phone" :href="`https://wa.me/${config.public.owner.phone}`" />
                 <UButton :label="$t('Kenalan Dulu Yuk')" color="neutral" size="xl" class="rounded-full" variant="ghost" trailing-icon="i-lucide-arrow-right" @click="$router.push('/about')" />
             </div>
         </UContainer>

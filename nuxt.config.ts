@@ -7,12 +7,13 @@ export default defineNuxtConfig({
       owner: {
         name: 'Tony Aditama',
         email: 'tonyaditama@gmail.com',
-        phone: '+6281234567890',
-        instagram: 'https://instagram.com/tonyaditama',
-        whatsapp: 'https://wa.me/6281234567890',
-        twitter: 'https://twitter.com/tonyaditama',
-        linkedin: 'https://linkedin.com/in/tonyaditama',
-        company: 'Company',
+        phone: '6281312907698',
+        socials: [
+          { icon: 'i-lucide-instagram', href: 'https://www.instagram.com/tony_aditama?utm_source=qr&igsh=MTY1czdjcGFkM29oYw==' },
+          { icon: 'i-lucide-phone', href: 'https://wa.me/6281312907698' },
+          { icon: 'i-lucide-facebook', href: 'https://www.facebook.com/share/19AAq1rGEZ/' },
+        ] as { icon: string; href: string }[],
+        company: 'TripJavaBali',
       }
     }
   },
@@ -67,7 +68,7 @@ export default defineNuxtConfig({
       ogType: 'website',
       ogUrl: 'https://tripjavabali.com',
       ogTitle: 'Explore Java & Bali | Your Personal Guide',
-      ogImage: '/image.png',
+      ogImage: '/og_image.png',
       robots: 'index, follow',
     }
   },

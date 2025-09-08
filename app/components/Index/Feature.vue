@@ -1,20 +1,6 @@
-<template>
-    <UContainer class="py-10 lg:py-14 space-y-8">
-        <Heading :title="$t('Kenapa Harus Kita?')" :description="$t('Temukan kenapa traveling bersama pandu wisata lokal membuat perjalanan kamu lebih berkesan.')" class="text-center" />
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-2">
-            <UCard v-for="feature in features" :key="feature.title" variant="soft" class="bg-muted/50 backdrop-blur-[2px] hover:bg-muted transition-all hover:-translate-y-0.5">
-                <UBadge :icon="feature.icon" size="xl" class="p-3 rounded-lg" variant="subtle" />
-                <div class="mt-5">
-                    <h3 class="text-lg font-semibold">{{ feature.title }}</h3>
-                    <p class="mt-1 text-muted">{{ feature.description }}</p>
-                    <UButton variant="link" class="mt-2 p-0!" trailing-icon="i-lucide-arrow-right" :label="$t('Pelajari lebih lanjut')" />
-                </div>
-            </UCard>
-        </div>
-    </UContainer>
-</template>
-
 <script lang="ts" setup>
+const config = useRuntimeConfig()
+
 const features = [
     {
         icon: 'i-lucide-monitor-smartphone',
@@ -38,3 +24,19 @@ const features = [
     }
 ]
 </script>
+
+<template>
+    <UContainer class="py-10 lg:py-14 space-y-8">
+        <Heading :title="$t('Kenapa Harus Kita?')" :description="$t('Temukan kenapa traveling bersama pandu wisata lokal membuat perjalanan kamu lebih berkesan.')" class="text-center" />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-2">
+            <UCard v-for="feature in features" :key="feature.title" variant="soft" class="bg-muted/50 backdrop-blur-[2px] hover:bg-muted transition-all hover:-translate-y-0.5">
+                <UBadge :icon="feature.icon" size="xl" class="p-3 rounded-lg" variant="subtle" />
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold">{{ feature.title }}</h3>
+                    <p class="mt-1 text-muted">{{ feature.description }}</p>
+                    <UButton variant="link" class="mt-2 p-0!" trailing-icon="i-lucide-arrow-right" :label="$t('Pelajari lebih lanjut')" :href="`https://wa.me/${config.public.owner.phone}`" target="_blank" />
+                </div>
+            </UCard>
+        </div>
+    </UContainer>
+</template>
